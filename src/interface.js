@@ -23,24 +23,28 @@ $(document).ready(function() {
     updateUsage();
   });
 
-  $("ps_on").click(function() {
+  $("#ps-on").click(function() {
     thermostat.powerSaveModeOn();
+    $("#power-saving").text('On');
     updateTemperature();
     updateUsage();
   });
 
-  $("ps_off").click(function() {
+  $("#ps-off").click(function() {
     thermostat.powerSaveModeOff();
+    $("#power-saving").text('Off');
     updateTemperature();
     updateUsage();
   });
 
   function updateTemperature() {
-    $("#current_temp").text(thermostat.getTemperature());
+    $("#current-temp").text(thermostat.getTemperature());
+    $("#current-temp").attr('class', thermostat.usage());
   };
 
   function updateUsage() {
     $("#usage").text(thermostat.usage());
+    $("#usage").attr('class', thermostat.usage());
   };
 
 });

@@ -2,10 +2,17 @@ $(document).ready(function() {
 
   var thermostat = new Thermostat();
 
-  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=e10d068b8fa9cbe5b525ae53bdd61655&units=metric', function(data) {
-    $('#outside-temp').text(data.main.temp);
-  })
+  function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?';
+    var location = 'q=' + city;
+    var key = '&appid=e10d068b8fa9cbe5b525ae53bdd61655'
+    var units = '&units=metric'
+    $.get(url + location + key + units, function(data){
+      $('#outside-temp').text(data.main.temp);
+    })
+  }
 
+  displayWeather('london');
   updateTemperature();
   updateUsage();
   $("#power-saving").text('On');
@@ -40,6 +47,11 @@ $(document).ready(function() {
     $("#power-saving").text('Off');
     updateTemperature();
     updateUsage();
+  });
+
+  $("#current-city").change(function() {
+    var city = $("#current-city").val();
+    displayWeather(city);
   });
 
   function updateTemperature() {

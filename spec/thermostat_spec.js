@@ -47,5 +47,17 @@ describe('Thermostat:', function() {
     });
   });
 
+  describe('.setMaximumTemperature', function() {
+    it('increases the max temp if power save mode is off', function() {
+      thermostat.powerSaveModeOff();
+      expect(thermostat.maximumTemperature).toBe(32);
+    });
+    it('decreases the max temp if power save mode is on', function() {
+      thermostat.powerSaveModeOff();
+      thermostat.powerSaveModeOn();
+      expect(thermostat.maximumTemperature).toBe(25);
+    });
+  });
+
 
 });

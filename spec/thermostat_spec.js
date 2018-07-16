@@ -67,12 +67,12 @@ describe('Thermostat:', function() {
   describe('.setMaximumTemperature', function() {
     it('increases the max temp if power save mode is off', function() {
       thermostat.powerSaveModeOff();
-      expect(thermostat.MaximumTemperature()).toEqual(32);
+      expect(thermostat.maximumTemperature()).toEqual(32);
     });
     it('decreases the max temp if power save mode is on', function() {
       thermostat.powerSaveModeOff();
       thermostat.powerSaveModeOn();
-      expect(thermostat.MaximumTemperature()).toEqual(25);
+      expect(thermostat.maximumTemperature()).toEqual(25);
     });
   });
 

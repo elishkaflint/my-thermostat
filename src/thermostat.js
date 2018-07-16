@@ -15,7 +15,11 @@ Thermostat.prototype.getPowerSaveMode = function() {
 }
 
 Thermostat.prototype.up = function() {
-  this.temperature += 1
+  if(this.temperature + 1 > this.maximumTemperature()) {
+    throw new Error('Temperature at maximum')
+  } else {
+    this.temperature += 1
+  }
 }
 
 Thermostat.prototype.down = function() {
@@ -30,6 +34,6 @@ Thermostat.prototype.powerSaveModeOff = function() {
   this.powerSaveMode = false;
 }
 
-Thermostat.prototype.MaximumTemperature = function() {
- return (this.getPowerSaveMode() ? this.powerSaveOnMaxTemp : this.powerSaveOffMaxTemp );
+Thermostat.prototype.maximumTemperature = function() {
+  return (this.getPowerSaveMode() ? this.powerSaveOnMaxTemp : this.powerSaveOffMaxTemp );
 }

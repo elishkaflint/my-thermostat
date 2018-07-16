@@ -2,8 +2,13 @@ $(document).ready(function() {
 
   var thermostat = new Thermostat();
 
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=e10d068b8fa9cbe5b525ae53bdd61655&units=metric', function(data) {
+    $('#outside-temp').text(data.main.temp);
+  })
+
   updateTemperature();
   updateUsage();
+  $("#power-saving").text('On');
 
   $("#plus").click(function() {
     thermostat.up();

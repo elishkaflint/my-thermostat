@@ -83,11 +83,38 @@ describe('Thermostat:', function() {
     });
   });
 
-  describe('.resetn', function() {
+  describe('.reset', function() {
     it('resets the thermostat to 20', function() {
       thermostat.up();
       thermostat.reset();
       expect(thermostat.temperature).toBe(20);
+    });
+  });
+
+  describe('.usage', function() {
+    describe('when the usage is <18', function() {
+      it('returns low usage', function() {
+        for(var i = 0; i < 3; i++) {
+          thermostat.down()
+        }
+        expect(thermostat.usage()).toEqual('low-usage');
+      });
+    });
+    describe('when the usage is <25', function() {
+      it('returns medium usage', function() {
+        for(var i = 0; i < 4; i++) {
+          thermostat.up()
+        }
+        expect(thermostat.usage()).toEqual('medium-usage');
+      });
+    });
+    describe('when the usage is >=25', function() {
+      it('returns medium usage', function() {
+        for(var i = 0; i < 5; i++) {
+          thermostat.up()
+        }
+        expect(thermostat.usage()).toEqual('high-usage');
+      });
     });
   });
 

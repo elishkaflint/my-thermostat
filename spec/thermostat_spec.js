@@ -51,9 +51,9 @@ describe('Thermostat:', function() {
       for(var i = 0; i < 10; i++) {
         thermostat.down()
       }
-      expect(function() {thermostat.down() }).toThrow(new Error('Temperature at mininum'))
+      expect(function() {thermostat.down() }).toThrow(new Error('Temperature at minimum'))
     });
-    
+
   });
 
   describe('.powerSaveModeOff', function() {

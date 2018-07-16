@@ -23,7 +23,11 @@ Thermostat.prototype.up = function() {
 }
 
 Thermostat.prototype.down = function() {
-  this.temperature -= 1
+  if(this.temperature - 1 < this.minimumTemperature) {
+    throw new Error('Temperature at minimum')
+  } else {
+    this.temperature -= 1
+  }
 }
 
 Thermostat.prototype.powerSaveModeOn = function() {

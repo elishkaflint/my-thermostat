@@ -47,6 +47,13 @@ describe('Thermostat:', function() {
       thermostat.down()
       expect(thermostat.getTemperature()).toEqual(19)
     });
+    it('throws an error if the temperature is lower than the min temp', function() {
+      for(var i = 0; i < 10; i++) {
+        thermostat.down()
+      }
+      expect(function() {thermostat.down() }).toThrow(new Error('Temperature at mininum'))
+    });
+    
   });
 
   describe('.powerSaveModeOff', function() {

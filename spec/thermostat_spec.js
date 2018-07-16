@@ -108,12 +108,12 @@ describe('Thermostat:', function() {
         expect(thermostat.usage()).toEqual('medium-usage');
       });
     });
-    describe('when the usage is >=25', function() {
+    describe('when the usage is > 25', function() {
       it('returns medium usage', function() {
-        for(var i = 0; i < 5; i++) {
+        for(var i = 0; i < 4; i++) {
           thermostat.up()
         }
-        expect(thermostat.usage()).toEqual('high-usage');
+        expect(thermostat.usage()).toEqual('medium-usage');
       });
     });
   });

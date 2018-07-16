@@ -1,6 +1,6 @@
 function Thermostat () {
-  this.temperature = 20;
-  this.startingTemperature = 20;
+  this.defaultTemperature = 20;
+  this.temperature = this.defaultTemperature;
   this.minimumTemperature = 10;
   this.powerSaveMode = true;
   this.powerSaveOnMaxTemp = 25;
@@ -45,7 +45,7 @@ Thermostat.prototype.maximumTemperature = function() {
 }
 
 Thermostat.prototype.reset = function() {
-  this.temperature = this.startingTemperature;
+  this.temperature = this.defaultTemperature;
 }
 
 Thermostat.prototype.usage = function() {

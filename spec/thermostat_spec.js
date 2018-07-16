@@ -23,6 +23,23 @@ describe('Thermostat:', function() {
       thermostat.up()
       expect(thermostat.getTemperature()).toEqual(21)
     });
+    describe('when the power save mode is on', function() {
+      it('throws an error if the temperature exceeds the max temp', function() {
+        for(var i = 0; i < 5; i++) {
+          thermostat.up()
+        }
+        expect(function() {thermostat.up() }).toThrow(new Error('Temperature at maximum'))
+      });
+    });
+    describe('when the power save mode is off', function() {
+      it('throws an error if the temperature exceeds the max temp', function() {
+        thermostat.powerSaveModeOff();
+        for(var i = 0; i < 12; i++) {
+          thermostat.up()
+        }
+        expect(function() {thermostat.up() }).toThrow(new Error('Temperature at maximum'))
+      });
+    });
   });
 
   describe('.down', function() {

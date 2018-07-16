@@ -83,4 +83,12 @@ describe('Thermostat:', function() {
     });
   });
 
+  describe('.resetn', function() {
+    it('resets the thermostat to 20', function() {
+      thermostat.up();
+      thermostat.reset();
+      expect(thermostat.temperature).toBe(20);
+    });
+  });
+
 });

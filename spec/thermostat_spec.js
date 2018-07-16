@@ -20,7 +20,7 @@ describe('Thermostat:', function() {
   describe('.down', function() {
     it('decreases the temperature by one degree', function() {
       thermostat.down()
-      expect(thermostat.getTemperature()).toEqual(20)
+      expect(thermostat.getTemperature()).toEqual(19)
     });
   });
 

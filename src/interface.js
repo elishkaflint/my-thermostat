@@ -19,34 +19,29 @@ $(document).ready(function() {
 
   $("#plus").click(function() {
     thermostat.up();
-    updateTemperature();
-    updateUsage();
+    refreshInfo();
   });
 
   $("#minus").click(function() {
     thermostat.down();
-    updateTemperature();
-    updateUsage();
+    refreshInfo();
   });
 
   $("#reset").click(function() {
     thermostat.reset();
-    updateTemperature();
-    updateUsage();
+    refreshInfo();
   });
 
   $("#ps-on").click(function() {
     thermostat.powerSaveModeOn();
     $("#power-saving").text('On');
-    updateTemperature();
-    updateUsage();
+    refreshInfo();
   });
 
   $("#ps-off").click(function() {
     thermostat.powerSaveModeOff();
     $("#power-saving").text('Off');
-    updateTemperature();
-    updateUsage();
+    refreshInfo();
   });
 
   $("#current-city").change(function() {
@@ -63,5 +58,10 @@ $(document).ready(function() {
     $("#usage").text(thermostat.usage());
     $("#usage").attr('class', thermostat.usage());
   };
+
+  function refreshInfo() {
+    updateTemperature();
+    updateUsage();
+  }
 
 });

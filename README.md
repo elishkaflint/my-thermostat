@@ -3,8 +3,9 @@ ___
 
 ## Summary
 
-Week 5 Makers Academy project to develop a Thermostat web page.<br>
+Week 5 Makers Academy project to develop a Thermostat web page:<br>
 
+![sneak preview](https://github.com/elishkaflint/my-thermostat/blob/master/Preview.png)
 ___
 
 ## Credits
@@ -53,9 +54,4 @@ $ git clone https://github.com/elishkaflint/chitter-challenge.git
 $ cd my-thermostat
 $ open thermostat.html
 ```
-
-### Sneak Preview
-
-![sneak preview](https://github.com/elishkaflint/my-thermostat/blob/master/Preview.png)
-
 ____

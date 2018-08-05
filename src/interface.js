@@ -15,7 +15,8 @@ $(document).ready(function() {
   displayWeather('london');
   updateTemperature();
   updateUsage();
-  $("#power-saving").text('On');
+  $("#power-saving").text(thermostat.powerSaveStatus());
+  $("#power-saving").attr('class', thermostat.powerSaveStatus());
 
   $("#plus").click(function() {
     thermostat.up();
@@ -34,13 +35,15 @@ $(document).ready(function() {
 
   $("#ps-on").click(function() {
     thermostat.powerSaveModeOn();
-    $("#power-saving").text('On');
+    $("#power-saving").text(thermostat.powerSaveStatus());
+    $("#power-saving").attr('class', thermostat.powerSaveStatus());
     refreshInfo();
   });
 
   $("#ps-off").click(function() {
     thermostat.powerSaveModeOff();
-    $("#power-saving").text('Off');
+    $("#power-saving").text(thermostat.powerSaveStatus());
+    $("#power-saving").attr('class', thermostat.powerSaveStatus());
     refreshInfo();
   });
 

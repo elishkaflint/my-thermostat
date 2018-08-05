@@ -1,11 +1,158 @@
+@font-face {
+  font-family: "Helmet";
+  src: url("Helmet-Regular.ttf");
+}
+
+body {
+  font-family: "Helmet";
+}
+
+#controller {
+  position: relative;
+  width: 700px;
+  margin: auto;
+}
+
+#power {
+  position: relative;
+  width: 700px;
+  margin: auto;
+  height: 60px;
+}
+
+#usage-report {
+  height: 60px;
+  width: 700px;
+  margin: auto;
+}
+
+#current-temp {
+  font-size: 200px;
+  font-weight: bold;
+  align: center;
+}
+
+#outdoor {
+  position: relative;
+  width: 700px;
+  margin: auto;
+}
+
+#current-city {
+  position: absolute;
+  left: 315px;
+  margin: auto;
+  border: 0.5px solid #2E294E;
+}
+
+#usage {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+button {
+  margin: 5px;
+  height: 20px;
+  bottom: 0;
+  font-size: 12px;
+  width: 70px;
+  color: white;
+}
+
+#minus {
+  position: absolute;
+  left: 235px;
+  background-color: #AEEBF3;
+  border: 0.5px solid #48E5F9;
+}
+
+#minus:hover {
+  background-color: #48E5F9;
+  border: 0.5px solid #48E5F9;
+}
+
+#plus {
+  position: absolute;
+  left: 310px;
+  background-color: #F5967C;
+  border: 0.5px solid #ED4010;
+}
+
+#plus:hover {
+  background-color: #ED4010;
+  border: 0.5px solid #ED4010;
+}
+
+#reset {
+  position: absolute;
+  left: 385px;
+  background-color: #8D8A9E;
+  border: 0.5px solid #2E294E;
+}
+
+#reset:hover {
+  background-color: #2E294E;
+  border: 0.5px solid #2E294E;
+}
+
+#summary {
+  position: absolute;
+  left: 285px;
+}
+
+#ps-on {
+  position: absolute;
+  left: 275px;
+  background-color: #8D8A9E;
+  border: 0.5px solid #2E294E;
+}
+
+#ps-on:hover {
+  background-color: #2E294E;
+  border: 0.5px solid #2E294E;
+}
+
+#ps-off {
+  position: absolute;
+  left: 350px;
+  background-color: #8D8A9E;
+  border: 0.5px solid #2E294E;
+}
+
+#ps-off:hover {
+  background-color: #2E294E;
+  border: 0.5px solid #2E294E;
+}
+
+p {
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+}
+
+p.temp {
+  width: 40%;
+  font-size: 100px;
+  font-weight: bold;
+  margin: auto;
+}
+
 .low-usage{
-  color: green;
+  color: #48E5F9;
 }
 
 .medium-usage{
-  color: orange;
+  color: #FFC700;
 }
 
 .high-usage{
-  color: red;
+  color: #ED4010;
+}
+
+.ON{
+  color: gray;
+}
+
+.OFF{
+  color: gray;
 }

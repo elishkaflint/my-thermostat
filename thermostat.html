@@ -11,21 +11,34 @@
     </head>
 
     <body>
-      <button id="plus" type="button">+</button>
-      <button id="minus" type="button">-</button>
-      <button id="reset" type="button">Reset</button>
-      <button id="ps-on" type="button">Power Save On</button>
-      <button id="ps-off" type="button">Power Save Off</button>
-      <h3>Outdoor Temperature: <span id="outside-temp"></span></h3>
-      <select id="current-city">
-        <option value="london">London</option>
-        <option value="new york">New York</option>
-        <option value="paris">Paris</option>
-        <option value="tokyo">Tokyo</option>
-      </select>
-      <h3>Indoor Temperature: <span id="current-temp"></span></h3>
-      <h3 id="usage"></h3>
-      <h3>Power Save Mode: <span id="power-saving"></span></h3>
+
+      <div id="controller">
+          <button id="plus" type="button">+</button>
+          <button id="minus" type="button">-</button>
+          <button id="reset" type="button">Reset</button>
+        <p class='temp'><span id="current-temp"></span></p>
+      </div>
+
+      <div id="usage-report">
+        <p><span id="usage"></span></p>
+      </div>
+
+      <div id="power">
+        <div id="summary"><p>Power Save Mode: <span id="power-saving"></span></p></div>
+        <button id="ps-on" type="button">On</button>
+        <button id="ps-off" type="button">Off</button>
+      </div>
+
+      <div id="outdoor">
+        <p>Outdoor Temperature: <span id="outside-temp"></span></p>
+          <select id="current-city">
+            <option value="london">London</option>
+            <option value="new york">New York</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+          </select>
+      </div>
+
     </body>
 
   </html>

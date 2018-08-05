@@ -56,4 +56,6 @@ $ open thermostat.html
 
 ### Sneak Preview
 
+![sneak preview](https://github.com/elishkaflint/my-thermostat/blob/master/Preview.png)
+
 ____

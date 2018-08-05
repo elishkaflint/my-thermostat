@@ -50,7 +50,7 @@ Javascript, Jasmine, OpenWeather API
 ### Launching the Application
 
 ```
-$ git clone https://github.com/elishkaflint/chitter-challenge.git
+$ git clone https://github.com/elishkaflint/my-thermostat.git
 $ cd my-thermostat
 $ open thermostat.html
 ```
